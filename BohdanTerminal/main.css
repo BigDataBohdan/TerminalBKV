@@ -1,0 +1,339 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+ 
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  border: 0;
+  overflow: hidden;
+  /*  Disable scrollbars */
+  display: block;
+  /* No floating content on sides */
+}
+ 
+::-webkit-scrollbar-track
+{
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	
+	background-color: #555;
+}
+table, th, td {
+  border: 1px solid rgb(255, 255, 255);
+  border-collapse: collapse;
+  padding: 6px;
+  margin: 2px;
+}
+#redtable{
+  background-color: #00000094;
+}
+.wb-like1 {
+  background-size: 20px auto;
+  
+}
+.wb-like1.active {
+  background-image: url(demo/heart-filled.svg) !important;
+}
+th, td {
+  background-color: #96d4d4e3;
+  color:#000000;
+}
+#ablank{
+  color:#9CEAF3;
+}
+::-webkit-scrollbar
+{
+	width: 14px;
+	background-color: #555;
+}
+ 
+::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: rgba(2, 2, 2, 0.64);
+}
+.white{
+  color:rgb(238, 238, 238);
+}
+.blue{
+  color:#9CEAF3;
+}
+a{
+  text-decoration: none;
+  color: rgb(238, 238, 238);
+}
+.wb-body {
+  background: black;
+}
+
+ 
+.winbox {
+  background: linear-gradient(90deg, #303030,   #222222); 
+  border-radius: 4px 4px 4px 4px;
+  box-shadow: none;
+  display:flex;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  opacity: 89%;
+   
+   
+}
+.winbox input{
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  caret-color: rgb(0, 255, 0);
+  caret-shape: 20px;
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+     
+}
+
+@keyframes typing {
+  from { width: 50% }
+  to { width: 220% }
+}
+
+/* The typewriter cursor effect */
+ 
+
+
+.winbox.min {
+  border-radius: 0;
+}
+#myCanvas{
+  height:100%;
+  width: 100%;
+  background-size: cover;
+  display: block;
+}
+.canvas{
+  display: block;
+  height: 100%;
+}
+.wb-body {
+  /* set the width of window border via margin: */
+   
+  color: #fff;
+  background: #131820;
+  
+}
+ 
+
+
+.wb-body #container{
+
+  width:100%;
+  height:100%;
+ 
+} 
+
+.wb-title {
+  font-size: 14px;
+   
+  font-weight: 600;
+  text-align: center;
+}
+
+ 
+body{
+ 
+  background-color: #0d0c1a;
+  padding-top: 10;
+  height:100%;
+  height: 100%;
+  font-family: 'Ubuntu', sans-serif ;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+canvas{
+  opacity: 90%;
+}
+.container{
+  display:flex;
+  flex-direction: column;
+  width:100%;
+  max-width:700px;
+  height:500px;
+  overflow: hidden;
+  border-radius: 6px;
+  border: 1px solid gray;
+  margin:60px;
+  cursor: text;
+}
+.menu{
+  display:flex;
+  align-items: center;
+
+  text-align: center;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  background-color: #424040;
+  padding: 0 8px;
+  cursor:default;
+}
+.menu .button{
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  margin-right:8px;
+  cursor:pointer;
+}
+
+
+
+div.title{
+  flex:1;
+  text-align:center;
+}
+.menu h1{
+  font-size:15px;
+  color:#9c9c9c;
+
+}
+.buttons-flex{
+  position: absolute;
+  display:flex;
+  flex-direction: row;
+}
+@media (max-width:500px){
+  .buttons-flex{
+    position: unset;
+    display:flex;
+    flex-direction: row;
+  }
+}
+@media (max-width:330px){
+  .menu h1{
+    display:none;
+  }
+}
+#terminal{
+  background-color: #131820;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 16px;
+  line-height: 1.2;
+  padding: 10px;
+
+  
+}
+
+p{
+  font-size:15px;
+  color:rgb(255, 255, 255);
+  padding:3px 3;
+  font-family: 'Ubuntu';
+  src:'webfonts/Ubuntu-Bold.ttf';
+  margin-left: 18px;
+}
+i{
+  font-size:15px;
+ 
+  
+  color:rgb(24, 139, 36);
+  padding:5px 4px;
+  margin-left: 15px;
+}
+h2{
+  font-size:16px;
+  color:rgb(238, 238, 238);
+ 
+}
+p.code{
+  color:#9175c8;
+  margin-left:18px;
+  
+}
+
+span.text{
+  margin-left:18px;
+   
+  color:rgb(145, 78, 78);
+}
+span i{
+  color:rgb(145, 78, 78);
+  margin-left:22px;
+}
+p.path{
+  color:#F7FCA0;
+  margin-left:18px;
+}
+p.path span{
+  color:#6A77D2;
+}
+p.path span + span{
+  color:#9CEAF3;
+}
+
+.sucess{
+  color:#5AD786;
+}
+.error{
+  color:#F78F85;
+}
+p.response{
+  color:rgb(238, 238, 238);
+}
+
+input{
+  border:none;
+  background-color: unset;
+  color:rgb(238, 238, 238);
+  width:100%;
+  font-size:16px;
+  font-family: 'Ubuntu-Regular', monospace;
+ 
+  padding-left: 4px;
+}
+input:focus{
+  border:none;
+  outline: none;
+  box-shadow: none;
+  background-color: unset;
+  
+}
+.type{
+  display:flex;
+  align-items: center;
+  
+}
+.type2{
+  display:flex;
+  align-items: center;
+ 
+}
+.icone{
+  color:#5AD786;
+  padding-right:8px;
+}
+
+.icone.error{
+  color:#F78F85;
+}
+
+
+
+.wb-header {
+  top: 0;
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  color: #fff;
+  overflow: hidden;
+  z-index: 1;
+}
+

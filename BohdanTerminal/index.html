@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+ 
+ 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400&display=swap" rel="stylesheet"> 
+   
+ 
+
+  <link href="all.css" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+  
+    <script src="winbox.bundle.min.js"></script>
+
+  <title>BKvetka Terminal</title>
+  <link rel="icon" type="image/x-icon" href="titleIcon.png">
+</head>
+
+<style>
+
+    /*#screen{
+      position:relative;
+      width: 100%px;
+      height:500px;
+
+      background-color: rgba(0, 128, 58, 0.348);
+    }
+    #scan,#bezel{
+      position:absolute;
+      width:100%;
+      height:100%;
+      top:0;
+      left:0;
+      pointer-events:none;
+      display:flex;
+      flex-direction: column;
+       
+      width:100%;
+      height:100%;
+      
+      overflow: auto;
+    }
+    #bezel{
+     opacity: 55%;
+     color:rgba(50, 50, 50, 0.996);
+    }
+    #content,#app{
+     font-family: VT323;
+     padding:10px;
+      color:rgba(172, 255, 47, 0.682);
+      font-size: 10px;
+     /*text-shadow: 1px 1px 2px rgba(10, 14, 1, 0.204) , 0 0 1em rgba(94, 255, 0, 0.7), 0 0 0.2em rgba(47, 255, 0, 0.612);
+    }
+  
+    #scan{
+      opacity: 70%;
+    }*/
+  </style>
+ <!-- <div class="container">
+    
+   <div class="menu">
+  
+      <div class="buttons-flex">
+          
+      <div class="button red"></div>
+      <div class="button yellow"></div>
+      <div class="button green"></div> 
+    </div>
+    <div class="title">
+      guest@kali:~/hellomate$
+    </div>
+    </div>-->
+
+   <!-- <div id="screen"> -->
+ 
+      
+    <div id="terminal">       
+      <script src="main.js">
+          
+      </script>   
+      
+      </div>
+ 
+<canvas id="myCanvas" style="border:1px solid #fff;">
+
+<script>
+  var canvas = document.getElementById('myCanvas');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  
+  // Get the canvas context and set up variables for particles and lines
+  var ctx = canvas.getContext('2d');
+  var particles = [];
+  var lines = [];
+  var numParticles = 57;
+  
+  // Define a Particle class with x and y coordinates, velocity and color
+  class Particle {
+    constructor(x, y, vx, vy, color) {
+      this.x = x;
+      this.y = y;
+      this.vx = vx;
+      this.vy = vy;
+      this.color = color;
+    }
+  }
+  
+  // Generate particles with random positions, velocities and colors
+  for (var i = 0; i < numParticles; i++) {
+    particles.push(new Particle(
+      Math.random() * canvas.width,
+      Math.random() * canvas.height,
+      Math.random() * 2 - 1,
+      Math.random() * 2 - 1,
+      `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`
+    ));
+  }
+  
+  // Draw the particles on the canvas
+  function drawParticles() {
+    for (var i = 0; i < particles.length; i++) {
+      var particle = particles[i];
+      ctx.beginPath();
+      ctx.arc(particle.x, particle.y, 2, 0, 2 * Math.PI);
+      var gradient = ctx.createRadialGradient(particle.x, particle.y, 0, particle.x, particle.y, 3);
+      gradient.addColorStop(0, particle.color);
+      gradient.addColorStop(1, 'white');
+      ctx.fillStyle = gradient;
+      ctx.fill();
+    }
+  }
+  
+  // Connect particles with lines
+  function connectParticles() {
+    for (var i = 0; i < particles.length; i++) {
+      var particleA = particles[i];
+      for (var j = i + 1; j < particles.length; j++) {
+        var particleB = particles[j];
+        var dist = Math.sqrt(Math.pow(particleB.x - particleA.x, 2) + Math.pow(particleB.y - particleA.y, 2));
+        if (dist < 185    ) {
+          ctx.beginPath();
+          ctx.moveTo(particleA.x, particleA.y);
+          ctx.lineTo(particleB.x, particleB.y);
+          ctx.lineWidth = 1 - dist / 150;
+          var gradient = ctx.createLinearGradient(particleA.x, particleA.y, particleB.x, particleB.y);
+          gradient.addColorStop(0, particleA.color);
+          gradient.addColorStop(1, particleB.color);
+          ctx.strokeStyle = gradient;
+          ctx.stroke();
+        }
+      }
+    }
+  }
+  
+  // Move the particles and clear the canvas each frame
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawParticles();
+    connectParticles();
+    for (var i = 0; i < particles.length; i++) {
+      var particle = particles[i];
+      if (particle.x < 0 || particle.x > canvas.width) {
+        particle.vx *= -1;
+      }
+      if (particle.y < 0 || particle.y > canvas.height) {
+        particle.vy *= -1;
+      }
+      particle.x += particle.vx;
+      particle.y += particle.vy;
+    }
+    requestAnimationFrame(animate);
+  }
+  
+  // Start the animation
+  animate();
+  
+</script>
+<style>
+
+</style>
+</canvas>
+    
+</body>
+</html>
